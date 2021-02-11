@@ -9,6 +9,7 @@ int main()
     y += 2;
     cout << "Hello world!; x = " << x << endl;
     cout << "Now y = " << y << endl;
-
+    cout << "x + y = " << x + y << endl;
+    
     return 0;
 }
