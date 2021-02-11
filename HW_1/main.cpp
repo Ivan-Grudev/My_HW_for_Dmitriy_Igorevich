@@ -22,5 +22,8 @@ int main()
 =======
     cout << "Repeat all these actions again" << endl;
 >>>>>>> 040d356... новая фразочка
+
+    cout << "Continue algorythm..." << endl;
+
     return 0;
 }
