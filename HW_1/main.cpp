@@ -8,5 +8,7 @@ int main()
     x++;
     y += 2;
     cout << "Hello world!; x = " << x << endl;
+    cout << "Now y = " << y << endl;
+
     return 0;
 }
