@@ -16,5 +16,7 @@ int main()
     cout << "x * y = " << x * y << endl;
 >>>>>>> master
 
+    cout << "And again..." << endl;
+
     return 0;
 }
