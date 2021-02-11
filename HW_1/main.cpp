@@ -16,7 +16,11 @@ int main()
     cout << "x * y = " << x * y << endl;
 >>>>>>> master
 
+<<<<<<< HEAD
     cout << "And again..." << endl;
 
+=======
+    cout << "Repeat all these actions again" << endl;
+>>>>>>> 040d356... новая фразочка
     return 0;
 }
