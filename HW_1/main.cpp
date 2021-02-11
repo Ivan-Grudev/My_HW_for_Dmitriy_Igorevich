@@ -1,30 +1,59 @@
+#include <chrono>
 #include <iostream>
+#include <vector>
+#include <algorithm>
+#include <clocale>
 
-using namespace std;
+void sort(std::vector < int > & v)
+{
+	for (std::size_t i = 0; i < v.size() - 1; ++i)
+	{
+		for (std::size_t j = i + 1; j < v.size(); ++j)
+		{
+			if (v[i] > v[j])
+			{
+				std::swap(v[i], v[j]);
+			}
+		}
+	}
+}
 
 int main()
 {
-    int x = 4, y = 0, z = 0;
-    int x = 6, y = 0, z = 0;
-    x++;
-    y += 2;
-    cout << "Hello world!; x = " << x << endl;
-    cout << "Now y = " << y << endl;
-    cout << "x + y = " << x + y << endl;
-<<<<<<< HEAD
-    cout << "x - y = " << x - y << endl;
-=======
-    cout << "x * y = " << x * y << endl;
->>>>>>> master
+	const auto size = 10000U;
 
-<<<<<<< HEAD
-    cout << "And again..." << endl;
+	std::vector < int > v(size, 0);
 
-=======
-    cout << "Repeat all these actions again" << endl;
->>>>>>> 040d356... новая фразочка
+	for (std::size_t i = 0; i < v.size(); ++i)
+	{
+		v[i] = v.size() - i;
+	}
+	auto v_1 = v;
+	auto v_2 = v;
 
-    cout << "Continue algorythm..." << endl;
 
-    return 0;
+	auto now1 = std::chrono::system_clock::now();
+	sort(v_1);
+	auto end1 = std::chrono::system_clock::now();
+	auto elapsed1 = std::chrono::duration_cast<std::chrono::milliseconds>(end1 - now1);
+	std::cout << "Algorythm 1 work time: " << elapsed1.count() << std::endl;
+
+
+	auto now2 = std::chrono::system_clock::now();
+	std::sort(v_2.begin(), v_2.end());
+	auto end2 = std::chrono::system_clock::now();
+	auto elapsed2 = std::chrono::duration_cast<std::chrono::milliseconds>(end2 - now2);
+	std::cout << "Algorythm 2 work time: " << elapsed2.count() << std::endl;
+
+	if (elapsed2.count() > elapsed1.count()) {
+		std::cout << "Algorythm 1 is faster" << std::endl;
+	}
+
+	else {
+		std::cout << "Algorythm 2 is faster" << std::endl;
+	}
+
+	system("pause");
+
+	return EXIT_SUCCESS;
 }
